@@ -1,0 +1,42 @@
+[package]
+name = "rs-rawzips2blobs2jsons"
+version = "0.1.0"
+edition = "2024"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+rawzip = "0.4"
+base64 = "0.22"
+chrono = { version = "0.4", default-features = false, features = ["std"] }
+
+[dependencies.serde]
+version = "1"
+default-features = false
+features = [
+	"std",
+	"derive",
+]
+
+[dependencies.serde_json]
+version = "1"
+default-features = false
+features = [
+	"std",
+]
+
+[[bin]]
+name = "rawzips2blobs2jsons"
+
+[profile.release-wasi]
+inherits = "release"
+lto = true
+strip = true
+opt-level = 'z'
+codegen-units = 1
