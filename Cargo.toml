@@ -3,6 +3,17 @@ name = "rs-rawzips2blobs2jsons"
 version = "0.1.0"
 edition = "2024"
 
+description = "Convert zips via stdin -> JSON blobs"
+license = "Apache-2.0"
+repository = "https://github.com/takanoriyanagitani/rs-rawzips2blobs2jsons"
+homepage = "https://github.com/takanoriyanagitani/rs-rawzips2blobs2jsons"
+documentation = "https://docs.rs/rs-rawzips2blobs2jsons/latest"
+keywords = ["zip", "wasi", "json", "blob", "base64"]
+
+exclude = [
+	"rawzips2blobs2jsons.wasm",
+]
+
 [lints.rust]
 unsafe_code = "forbid"
 
